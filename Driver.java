@@ -19,18 +19,25 @@ public int rearrangeReservations(LocalDate[] date, int[] slot, String[] medicare
     }
     return counter;
 }
-public static void bubbleSort(int [] sort_arr, int len){
+public static void bubbleSort(LocalDate [] date_arr, int [] slot_arr, String [] medi_arr){
         
-    for (int i=0;i<len-1;++i){
+    for (int i=0;i<(date_arr.length)-1;++i){
     
-        for(int j=0;j<len-i-1; ++j){
+        for(int j=0;j<(date_arr.length)-i-1; ++j){
     
-            if(sort_arr[j+1]<sort_arr[j]){
+            if(date_arr[j+1].compareTo(date_arr[j]) < 1 ){
     
-                int swap = sort_arr[j];
-                sort_arr[j] = sort_arr[j+1];
-                sort_arr[j+1] = swap;
-    
+                LocalDate swap = date_arr[j];
+                date_arr[j] = date_arr[j+1];
+                date_arr[j+1] = swap;
+
+                int swup = slot_arr[j];
+                slot_arr[j] = slot_arr[j+1];
+                slot_arr[j+1] = swup;
+
+                String swop = medi_arr[j];
+                medi_arr[j] = medi_arr[j+1];
+                medi_arr[j+1] = swop;
             }
         }
     }
