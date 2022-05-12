@@ -14,9 +14,10 @@ public class Driver {
 public int rearrangeReservations(LocalDate[] date, int[] slot, String[] medicare){
     LocalDate today = LocalDate.now();
     int counter = 0;
-    for (int i = 0; i < date.length(); i++){
-        if 
+    for (int i = 0; i < date.length; i++){
+
     }
+    return counter;
 }
 public static void bubbleSort(int [] sort_arr, int len){
         
