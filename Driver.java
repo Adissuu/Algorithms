@@ -1,33 +1,56 @@
-import java.time.LocalDate;
-import java.time.chrono.ChronoLocalDate;
 
 public class Driver {
     public static void main(String[] args) {
 
-        LocalDate rDate[] = { LocalDate.parse("2014-02-14"), LocalDate.parse("2002-01-23") };
-        int rSlot[] = { 1, 2 };
-        String rMedicare[] = { "EEE11", "YYY99" };
+       
+        Date rDate[] = { new Date("2014-01-23"), new Date("2002-01-23"), new Date("2005-12-06") };
+        int rSlot[] = { 2, 1, 5};
+        String rMedicare[] = { "EEE11", "YYY99", "A" };
+        Date today = new Date("2022-05-17");
 
-    }
-
-    public int rearrangeReservations(LocalDate[] date, int[] slot, String[] medicare) {
-        LocalDate today = LocalDate.now();
-        int counter = 0;
-        for (int i = 0; i < date.length; i++) {
+        rearrangeReservations(rDate, rSlot, rMedicare, today, rDate.length); 
+        System.out.println(rDate[0].toString());
 
         }
-        return counter;
-    }
 
-    public static void sort(LocalDate[] date_arr, int[] slot_arr, String[] medi_arr) {
-        LocalDate today = LocalDate.now();
-        // Try to make old reservation last and new first
-        for (int i = 0; i < (date_arr.length) - 1; ++i) {
+    public static void rearrangeReservations(Date[] date, int[] slot, String[] medicare, Date today, int n) {
+        
+        for (int i = 0; i < n - 1; ++i) {
+            if(n == 1) break;
+            if ((date[i + 1].number < date[i].number)) {
+                //bubble sort
+                Date swap = date[i];
+                date[i] = date[i + 1];
+                date[i + 1] = swap;
 
-            if (date_arr[i].compareTo(today) < 1) {
+                int swup = slot[i];
+                slot[i] = slot[i + 1];
+                slot[i + 1] = swup;
 
+                String swop = medicare[i];
+                medicare[i] = medicare[i + 1];
+                medicare[i + 1] = swop; 
+                //check slot
+                if(date[i+i].number == date[i].number && slot[i+1] < slot[i]){
+                    if(slot[i+1] < slot[i]){
+                    swap = date[i];
+                    date[i] = date[i + 1];
+                    date[i + 1] = swap;
+    
+                    swup = slot[i];
+                    slot[i] = slot[i + 1];
+                    slot[i + 1] = swup;
+    
+                    swop = medicare[i];
+                    medicare[i] = medicare[i + 1];
+                    medicare[i + 1] = swop; 
+                    }
+                }         
             }
+            rearrangeReservations(date, slot, medicare, today, n-1);
         }
+        
+        return;
     }
 
 }
