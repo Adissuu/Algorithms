@@ -4,17 +4,14 @@ public class Driver {
     public static void main(String[] args) {
 
        
-        Date rDate[] = { new Date("2021-11-25"), new Date("2022-03-08"), new Date("2021-12-02"), new Date("2022-02-01"), new Date("2021-12-02"), new Date("2021-12-03"), new Date("2022-01-25"), new Date("2022-01-14"), new Date("2022-02-01"), new Date("2022-01-01") };
+        Date rDate[] = { new Date("2021-11-25"), new Date("2022-03-08"), new Date("2021-12-02"), new Date("2022-02-03"), new Date("2021-12-02"), new Date("2021-12-03"), new Date("2022-01-25"), new Date("2022-01-14"), new Date("2022-02-01"), new Date("2022-01-01") };
         int rSlot[] = { 25, 10, 7, 15, 3, 40, 36, 11, 10, 15};
         String rMedicare[] = { "EEE11", "YYY99", "A","A","A","A","A","A", "a","a" };
         Date today = new Date("2022-01-01");
-
+        
         rearrangeReservations(rDate, rSlot, rMedicare, today, rDate.length);
-        System.out.println(rDate.length);
-        System.out.println(rSlot.length);
-        System.out.println(rSlot.length);
-        // for (int i = 0; i < rDate.length-1; i++)
-        //     System.out.println(rDate[i].toString());
+        for (int i = 0; i < rDate.length; i++)
+            System.out.println(rDate[i].toString());
          }
 
     public static int rearrangeReservations(Date[] date, int[] slot, String[] medicare, Date today, int n) {
@@ -35,24 +32,25 @@ public class Driver {
                 medicare[i] = medicare[i + 1];
                 medicare[i + 1] = swop; 
                 //check slot
-            }
+            
             // if(date[i+i].number == date[i].number && slot[i+1] < slot[i]){
             //     if(slot[i+1] < slot[i]){
-            //     Date swap = date[i];
+            //      swap = date[i];
             //     date[i] = date[i + 1];
             //     date[i + 1] = swap;
     
-            //     int swup = slot[i];
+            //      swup = slot[i];
             //     slot[i] = slot[i + 1];
             //     slot[i + 1] = swup;
     
-            //     String swop = medicare[i];
+            //      swop = medicare[i];
             //     medicare[i] = medicare[i + 1];
             //     medicare[i + 1] = swop; 
             //     }         
             // }
-            rearrangeReservations(date, slot, medicare, today, n-1);
         }
+        rearrangeReservations(date, slot, medicare, today, n-1);
+    }
         Date tDate[] = new Date[date.length];
         int tSlot[] = new int[date.length];
         String tMedicare[] = new String[date.length];
