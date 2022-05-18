@@ -91,35 +91,36 @@ f(n) = O(n) (c=4 n0 = 6 ) Since O(n) is always bigger than f(n) if 4 ≤ C and 6
 f(n) = Ω(n) (c = 2 n0 = 0) Because there is no possibility that the function Omega might be bigger at any point since f(n) is always bigger than 2n by 11.   
 
 b) 
+    
     j = 0
     A{24,20,51,4,37}
     -> 0 =< 5 - 2 -true
-      A[0] > A[1] -true
-      A{20,24,51,4,37} 
-      done -false
+        A[0] > A[1] -true
+        A{20,24,51,4,37} 
+        done -false
     -> 1 =< 5 - 2 -true
-      A[1] > A[2] -false
-      A{20,24,51,4,37}
+        A[1] > A[2] -false
+        A{20,24,51,4,37}
     -> 2 =< 5 - 2 -true
-      A[2] > A[3] -true
-      A{20,24,4,51,37}
+        A[2] > A[3] -true
+        A{20,24,4,51,37}
     -> 3 =< 5 - 2 -true
-      A[3] > A[4] -true
-      A{20,24,4,37,51}
+        A[3] > A[4] -true
+        A{20,24,4,37,51}
     j = 4
     -> 4 => 1 -true
-      A[4] < A[3] -false
-      A{20,24,4,37,51}
+        A[4] < A[3] -false
+        A{20,24,4,37,51}
     -> 3 => 1 -true
-      A[3] < A[2] -false
-      A{20,24,4,37,51}
+        A[3] < A[2] -false
+        A{20,24,4,37,51}
     -> 2 => 1 -true
-      A[2] < A[1] -true
-      A{20,4,24,37,51}
+        A[2] < A[1] -true
+        A{20,4,24,37,51}
     -> 1 => 1 -true
-      A[1] < A[0] -true
-      A{4,20,24,37,51}
-    Recursion
+        A[1] < A[0] -true
+        A{4,20,24,37,51}
+    MyAlgorithm(A,n)
     done -true 
     return A
     
