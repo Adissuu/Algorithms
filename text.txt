@@ -1,0 +1,70 @@
+Question 1)
+a.	Input an array with n elements
+    Declare the intergers for max element, i,j, count;
+    initialize the integer maxcount to 0;
+    i acts like an element holder
+    for loop that i starts from 0 and increases by 1 until it's smaller than n-1{
+      initialize count to 1 for every loop in i;
+      j acts like moving pointer
+      for loop that j starts from i+1 and increases by 1 until it's smaller than n-1{
+        if the element of i is equal to j{
+          add 1 to counter;
+          if counter > max counter{
+            set that j element as max element;
+          }
+        }
+      }
+
+    }
+    return "The element" + maxelement + "occur" + counter;
+    
+    a.Input an array with n elements
+    int maxelement, i,j, count;
+    int maxcount=0;
+    //i acts like an element holder
+    For(i=0;i<n;i++){
+      count=1;
+      //j acts like moving pointer
+      for(j=i+1;j<n;j++){
+        if (array[j]=array=[i]){
+          counter++;
+          if(counter>maxcounter){
+            maxelement=array[j];
+          }
+        }
+      }
+      int counter1=counter;
+    }
+    return "The element" + maxelement + "occur" + counter;
+
+  b. O(n^2)
+  c. O(n)
+Question 2)
+
+a) 4n^3 +250n^2 +752n+1000000isΩ(n)
+
+True because the best case is n therefore Ω(n)
+
+b) 99000n^3 + 8n^3 logn is Θ(logn)   
+
+False, the worst case or Big-O in this function is O(n^3)
+
+c) n^0.8 + log n is O(log n)
+
+True, when n goes to infinity, function goes O(logn)
+
+d) 3n^4+8n^3 logn is Θ(n^3 logn)
+
+False, as n gets bigger, function goes to n^4 since n>log n
+
+e) 2nlog^2 n+6n^2 logn is O(logn) 
+
+False, as n gets bigger, function goes to n^2 log n and not log^2
+
+f) n^6 + 0.0000001n^5 is Ω(n^5)
+
+True, the least and best case here is n^5
+
+Question 3)
+
+
