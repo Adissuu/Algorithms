@@ -12,7 +12,7 @@ public class Driver {
         for (int i = 0; i < rDate.length; i++)
             System.out.println(rDate[i].toString());
 
-        displayReservations(rDate, rSlot, rMedicare, 6);
+        // displayReservations(rDate, rSlot, rMedicare, 6);
     }
 
     // Methods
@@ -43,7 +43,7 @@ public class Driver {
             }
         }
         if (done != true)
-            rearrangeReservations(date, slot, medicare, today, n - 1);
+          active = rearrangeReservations(date, slot, medicare, today, n - 1);
         if (done == true) {
             for (int j = 0; j < date.length; j++) {
                 tDate[j] = date[j];
@@ -67,6 +67,7 @@ public class Driver {
                 }
             }
         }
+
         return active;
     }
 
