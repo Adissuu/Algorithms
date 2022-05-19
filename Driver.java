@@ -8,11 +8,14 @@ public class Driver {
         String rMedicare[] = { "EEE11", "YYY99", "A", "A", "A", "A", "A", "A", "a", "a" };
         Date today = new Date("2022-01-01");
 
-        rearrangeReservations(rDate, rSlot, rMedicare, today, rDate.length);
+        System.out.println(rearrangeReservations(rDate, rSlot, rMedicare, today, rDate.length));
         for (int i = 0; i < rDate.length; i++)
             System.out.println(rDate[i].toString());
+
+        displayReservations(rDate, rSlot, rMedicare, 6);
     }
 
+    // Methods
     public static int rearrangeReservations(Date[] date, int[] slot, String[] medicare, Date today, int n) {
         Date tDate[] = new Date[date.length];
         int tSlot[] = new int[date.length];
@@ -65,5 +68,12 @@ public class Driver {
             }
         }
         return active;
+    }
+
+    // Method
+    public static void displayReservations(Date[] date, int[] slot, String[] medicare, int n) {
+        for (int i = 0; i < n; i++) {
+            System.out.println(date[i].toString() + "\t" + slot[i] + "\t" + medicare[i]);
+        }
     }
 }
