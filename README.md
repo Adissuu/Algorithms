@@ -6,19 +6,19 @@ a)
     Output: String of highest occurence of number in n
 
     String s <- ""
-    counter <-
-    best <-
+    counter <- 0
+    best <- 0
 
-    for (int i = 0; i < n.lenght; i++)
+    FOR i = 0 to array length - 1
         counter = 0
-        for (int j = i; j < n.lenght; j++)
-            if (n[i] == n[j]) 
-                counter++
+        FOR j = 0 to array length - 1
+            IF (n[i] == n[j]) THEN
+                counter INCREMENT
     
-        if (best == counter)
-            s += "," + n[i]
-        if (counter > best)
-            s = n[i]
+        IF (best == counter THEN
+            s <-     "," + n[i]
+        IF (counter > best) THEN
+            s <- n[i]
             best <- counter
     print s
 
@@ -68,14 +68,14 @@ a)
         j ← 0 -> 1
         while j ≤ n - 2 do -> (n - 1)
             if A[j] > A[j + 1] then -> 1
-                swap(A[j], A[j + 1]) -> 1
+                swap(A[j], A[j + 1]) -> 3
                 done ← false -> 1
             j ← j + 1 -> 1
         end while
         j ← n - 1 -> 1
         while j ≥ 1 do -> n 
             if A[j] < A[j - 1] then -> 1
-                swap(A[j - 1], A[j]) -> 1
+                swap(A[j - 1], A[j]) -> 3
                 done ← false -> 1
             j ← j - 1 -> 1
         end while
@@ -84,11 +84,11 @@ a)
     else
         return A -> 1
 
-f(n) = 2n + 11
+f(n) = 15n + 2
 
-f(n) = O(n) (c=4 n0 = 6 ) Since O(n) is always bigger than f(n) if 4 ≤ C and 6 ≤ n
+f(n) = O(n) (c=15 n0 = 2 ) Since O(n) is always bigger than f(n) if 15 ≤ C and 2 ≤ n
 
-f(n) = Ω(n) (c = 2 n0 = 0) Because there is no possibility that the function Omega might be bigger at any point since f(n) is always bigger than 2n by 11.   
+f(n) = Ω(n) (c = 15 n0 = 0) Because there is no possibility that the function Omega might be bigger at any point since f(n) is always bigger than 15n.   
 
 b) 
     
@@ -120,14 +120,22 @@ b)
     -> 1 => 1 -true
         A[1] < A[0] -true
         A{4,20,24,37,51}
+
+    done == true -false
+
     MyAlgorithm(A,n)
     done -true 
     return A
     
-c)
+c) It sorts the array in ascending order.
 
-d)
+d) 
+    Yes, by using bubble sort. This way, instead of doing two loop, we do one:
+    FOR i < n - 1
+        IF n[i] > n[i+1] THEN
+            swap(A[i], A[i + 1])
+    MyAlgorithm(A, n-1)
 
-e)
+e) Direct recursion. It is not tail recursive since the function does not return the recursion.
 
 ________________________________________________

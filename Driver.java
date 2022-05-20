@@ -8,11 +8,13 @@ public class Driver {
         String rMedicare[] = { "EEE11", "YYY99", "A", "A", "A", "A", "A", "A", "a", "a" };
         Date today = new Date("2022-01-01");
 
-        System.out.println(rearrangeReservations(rDate, rSlot, rMedicare, today, rDate.length));
-        for (int i = 0; i < rDate.length; i++)
-            System.out.println(rDate[i].toString());
+        System.out.println("Number of active reservations: " +rearrangeReservations(rDate, rSlot, rMedicare, today, rDate.length));
 
-        // displayReservations(rDate, rSlot, rMedicare, 6);
+        displayReservations(rDate, rSlot, rMedicare, rearrangeReservations(rDate, rSlot, rMedicare, today, rDate.length));
+
+        displayPastReservationsIncreasingOrder(rDate, rSlot, rMedicare,(rDate.length - rearrangeReservations(rDate, rSlot, rMedicare, today, rDate.length)));
+        
+        displayPastReservationsDecreasingOrder(rDate, rSlot, rMedicare,(rDate.length - rearrangeReservations(rDate, rSlot, rMedicare, today, rDate.length)));
     }
 
     // Methods
@@ -73,8 +75,21 @@ public class Driver {
 
     // Method
     public static void displayReservations(Date[] date, int[] slot, String[] medicare, int n) {
+        
         for (int i = 0; i < n; i++) {
             System.out.println(date[i].toString() + "\t" + slot[i] + "\t" + medicare[i]);
         }
     }
+
+    public static void displayPastReservationsIncreasingOrder(Date[] date, int[] slot, String[] medicare, int n){
+        for (int i = date.length - 1; i > n + 1; i--){
+            System.out.println(date[i].toString() + "\t" + slot[i] + "\t" + medicare[i]);
+        }
+    }
+    public static void displayPastReservationsDecreasingOrder(Date[] date, int[] slot, String[] medicare, int n){
+        for (int i = date.length - n; i < date.length; i++){
+            System.out.println(date[i].toString() + "\t" + slot[i] + "\t" + medicare[i]);
+        }
+    }
+
 }
