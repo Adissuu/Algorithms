@@ -1,3 +1,0 @@
-# Programming Questions - Pseudo Code
-
-  

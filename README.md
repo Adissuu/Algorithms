@@ -38,11 +38,11 @@ a) 4n^3 + 250n^2 + 752n + 1000000 is Ω(n)
 b) 99000n^3 + 8n^3 logn is Θ(log n)
 
     False, Theta functions are defined by the worst case, which is Big-O. 
-    Big-O being O(n^3).
+    Big-O being O(n^3) and not O(log n) because n^3 > logn. 
 
 c) n^0.8 + logn is O(logn)
 
-    True, as n goes to infinity, the function goes to logn.
+    True, as n goes to infinity, the function goes to logn. m^0.8 goes to 0.
 
 d)  3n^4 + 8n^3logn is Θ(n^3logn)
 
@@ -54,7 +54,7 @@ e)  2nlog^2(n) + 6n^2nlog(n) is O(logn)
 
 f)  n^6 + 0.0000001n^5 is Ω(n^5)
 
-    True since the least it can get is n^5
+    True, since the least f(n) can get is n^5.
 ________________________________________________
 
 # Question 3

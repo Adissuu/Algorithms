@@ -1,8 +1,11 @@
+package Programming;
+
 public class Date {
     int number;
 
     public Date(String s) {
-        String arr[] = s.split("-");
+        String arr[] = new String[3];
+        arr = s.split("-");
         this.number = Integer.parseInt(arr[0] + arr[1] + arr[2]);
     }
 

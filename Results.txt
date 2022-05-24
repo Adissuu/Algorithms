@@ -1,0 +1,72 @@
+
+N = 10
+
+-RearrangeReservations: 3ms
+
+-DisplayReservations: 4ms
+
+-DisplayPastReservationsIncreasingOrder: 4ms
+
+-DisplayPastReservationsDecreasingOrder: 4ms
+
+==============================================
+
+N = 100
+
+-RearrangeReservations: 41ms
+
+-DisplayReservations: 49ms
+
+-DisplayPastReservationsIncreasingOrder: 47ms
+
+-DisplayPastReservationsDecreasingOrder: 48ms
+
+==============================================
+
+N = 1'000
+
+-RearrangeReservations: 674ms
+
+-DisplayReservations: 724ms
+
+-DisplayPastReservationsIncreasingOrder: 751ms
+
+-DisplayPastReservationsDecreasingOrder: 725ms
+
+==============================================
+
+N = 10'000
+
+-RearrangeReservations: Stack Overflow from now
+
+-DisplayReservations:
+
+-DisplayPastReservationsIncreasingOrder:
+
+-DisplayPastReservationsDecreasingOrder:
+
+==============================================
+
+N = 100'000
+
+-RearrangeReservations: 12ms
+
+-DisplayReservations:
+
+-DisplayPastReservationsIncreasingOrder:
+
+-DisplayPastReservationsDecreasingOrder:
+
+==============================================
+
+N = 10'000'000
+
+-RearrangeReservations: 12ms
+
+-DisplayReservations:
+
+-DisplayPastReservationsIncreasingOrder:
+
+-DisplayPastReservationsDecreasingOrder:
+
+==============================================
