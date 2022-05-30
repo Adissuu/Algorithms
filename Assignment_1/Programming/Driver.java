@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Driver {
     public static void main(String[] args) {
         Scanner reader;
-        int size = 10000;
+        int size = 10;
         new Generation(size);
         Scanner scan = new Scanner(System.in);
         System.out.println(
