@@ -1,14 +1,28 @@
-import java.security.KeyStore.Entry;
 
-public class MyPQUnsortedArray<K,V> implements MyPQ {
+public class MyPQUnsortedArray<K, V> implements MyPQ {
 
-    int size(){}
+    public int size() {
+        return 0;
+    }
 
-    boolean isEmpty(){}
+    public boolean isEmpty() {
+        return false;
+    }
 
-    V min(){}
+    public V min() {
+        return null;
+    }
 
-    V removeMin(){}
+    public V removeMin() {
+        return null;
+    }
 
-    void insert(K key, V value){}
+    void insert(K key, V value) {
+    }
+
+    @Override
+    public void insert(Comparable key, Object value) {
+        // TODO Auto-generated method stub
+
+    }
 }
