@@ -1,4 +1,4 @@
-public interface MyPQ<K,V> {
+public interface MyPQ<K extends Comparable<K>,V> {
     public int size();
 
     public boolean isEmpty();
