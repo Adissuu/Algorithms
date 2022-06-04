@@ -1,25 +1,5 @@
-import java.util.Comparator;
+public class MyPQSortedLinkedList<K extends Comparable <K>, V> {
 
-public class MyPQSortedLinkedList<K extends Comparable <K>, V> implements MyPQ<K,V> {
-
-    //Creating Node class
-    public class Node<K extends Comparable<K>,V> implements Comparator<Node<K,V>> {
-        K key;
-        V value;
-        Node <K,V> prev;
-        Node <K,V> next;
-        
-
-        public Node(K key, V value) {
-            this.key = key;
-            this.value = value;
-            
-        }
-        //Comparing two nodes based on their keys
-        public int comapre(Node<K,V> o1, Node<K,V>o2){
-            return o1.key.compareTo(o2.key);
-        }
-    }
 
     Node<K,V> head = null;
     Node<K,V> tail = null;
