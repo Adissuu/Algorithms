@@ -26,7 +26,7 @@ public class Entry<Integer, Character> {
 
     private int keyRandom() {
         Random random = new Random();
-        key = (int) random.nextInt(10000000);
+        key = random.nextInt(10000000);
         return key;
     }
 

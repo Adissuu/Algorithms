@@ -11,7 +11,6 @@ import java.util.List;
 public class MyHashMap<Integer, Character>
         extends AbsHashMap<Integer, Character> {
 
-    // To insert the the elements of the hashMap
     private ArrayList<Entry<Integer, Character>> map = new ArrayList<Entry<Integer, Character>>();
     // To calculate the number of elements that each bucket has
     private List bucket = new ArrayList();
@@ -24,7 +23,7 @@ public class MyHashMap<Integer, Character>
             map.add(i, new Entry<>(0, '0'));
     }
 
-    // OVERRIDING FUNCTIONS
+    // IMPLEMETNING FUNCTIONS
     @Override
     public int size() {
         return totalEntries;
@@ -37,7 +36,7 @@ public class MyHashMap<Integer, Character>
 
     @Override
     public char getMap(int key) {
-        StartTimer();
+        startTimer();
         int index = findKey(key);
         // Array get
         if (index == -1 || map.get(index).getValue() == '0') {
@@ -53,12 +52,12 @@ public class MyHashMap<Integer, Character>
 
     @Override
     public char putMap(int key, char value) {
-        StartTimer();
+        startTimer();
         if (findIndex(key % getCapacity()) == -1) {
             map.add(key % getCapacity(), new Entry<>(key, value));
             bucket.add(key);
             totalEntries++;
-            System.out.println("Size of the table = " + getCapacity()
+            System.out.println("Size of the map = " + getCapacity()
                     + ", Number of elements = " + size() +
                     "\nNumber of collision = " + collision
                     + "\nNumber of items in the bucket storing '" + value + "' is " + nodesAt(key) + ". ");
@@ -69,7 +68,7 @@ public class MyHashMap<Integer, Character>
             map.get(key % getCapacity()).setValue(value);
             bucket.add(key);
             collision++;
-            System.out.println("Size of the table = " + getCapacity()
+            System.out.println("Size of the map = " + getCapacity()
                     + ", Number of elements = " + size() +
                     "\nNumber of collision = " + collision
                     + "\nNumber of items in the bucket storing '" + value + "' is " + nodesAt(key) + ". ");
@@ -80,7 +79,7 @@ public class MyHashMap<Integer, Character>
 
     @Override
     public char removeMap(int key) {
-        StartTimer();
+        startTimer();
         int index = findIndex(key);
         if (index == -1) {
             System.out.println("Nothing at key " + key + "\n");
@@ -94,7 +93,7 @@ public class MyHashMap<Integer, Character>
         return value;
     }
 
-    // END OF OVERRIDING
+    // END OF IMPLEMENTATION
     // Next two methods are usefull to perform the get, put, and remove methods as
     // the first one gives the index based on the key and the second one does the
     // opposite.
@@ -118,7 +117,7 @@ public class MyHashMap<Integer, Character>
 
     public void print() {
         if (isEmpty()) {
-            System.out.println("The HashMap is capute.");
+            System.out.println("Null HashMap");
             return;
         }
         System.out.println(
@@ -142,14 +141,14 @@ public class MyHashMap<Integer, Character>
     }
 
     // Timers
-    public long StartTimer() {
-        long StartTimer = System.currentTimeMillis();
-        return StartTimer;
+    public static long startTimer() {
+        long startTimer = System.currentTimeMillis();
+        return startTimer;
     }
 
-    public void endTimer() {
+    public static void endTimer() {
         long endTimer = System.currentTimeMillis();
-        long executionTime = endTimer - StartTimer();
+        long executionTime = endTimer - startTimer();
         System.out.println("The method took " + executionTime + " ms to be executed.\n");
     }
 }
